@@ -1,46 +1,36 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi Witold,
 
-## Available Scripts
+Many thanks for your application, we like what we've seen and would love for you to show us what you can do! We have a challenge for you:
 
-In the project directory, you can run:
+Your goal is to create a page showing a list of hotels and their rooms.
 
-### `npm start`
+Please use React and (preferably) Typescript to implement this challenge as these are our technologies of choice for front end work. There are no other restrictions on technology use.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get the information to present, you will need to query the following API:
+https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This returns a list of hotels, with an Id. The Id can be used to query this query for the room types:
 
-### `npm test`
+https://obmng.dbm.guestline.net/api/roomRates/OBMNG/[hotelId] for example, https://obmng.dbm.guestline.net/api/roomRates/OBMNG/OBMNG1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Guests using the site should be able to:
 
-### `npm run build`
+•	Filter based on the star rating of the hotel, that is, given I have selected 3 stars, then I am able to see all hotels with a 3 and above rating.
+•	Filter based on the capacity of the room. That is, when I have selected 1 adult and 1 child then I am able to see all rooms with at least that capacity. Therefore, I will not be shown any rooms which do not accept children.
+•	View all images of the displayed hotel
+•	See hotel details (including hotel name, address and star rating) and room details (including room type, max adults, max children and long description)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For other requirements, please see the attached mockup sketch. Note that the crossed boxes on mockup is the location for images. The URLs can be found in the response to the initial request.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please approach this challenge like you would any work task, and importantly keep things simple.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Submitting your solution
 
-### `npm run eject`
+We expect to build your submission locally and review it's code. If you host it publicly let us know, but that's not necessary. Please send us source code (preferably a link to a public repository) with instructions on how to build it in a readme file Readme.md. We will always provide feedback about your work.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Got feedback for us?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We love receiving feedback! We're always looking to improve our recruitment process. So if you have anything you'd like to mention, please email peopleops@guestline.com.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Good Luck! 🚀
