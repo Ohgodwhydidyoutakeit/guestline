@@ -1,4 +1,7 @@
 
+https://gxpservicesstagestorage.blob.core.windows.net/hotelpagecodetest/9SYKaPm4q85GqTZzno7AT3.png
+MOCK
+
 Hi Witold,
 
 Many thanks for your application, we like what we've seen and would love for you to show us what you can do! We have a challenge for you:
