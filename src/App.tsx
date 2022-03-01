@@ -32,16 +32,17 @@ function App() {
     <div className="App">
 
 
-      {!apiCall.loading &&
-        <>
-          <img src="https://rl-uk2.azureedge.net/picturemanager/images/OBMNG4/hotel3.jpg" alt="main-logo" />
-          <Filters />
-          {/* Could have used a singe hotel type/interface */}
-          {apiCall.data.filter((element: any) => element.starRating >= filters.stars).map((element: any, index: number) => {
-            return <Hotel hotel={element} key={index} />
-          })}
-        </>
-      }
+      <>
+        <img src="https://rl-uk2.azureedge.net/picturemanager/images/OBMNG4/hotel3.jpg" alt="main-logo" />
+        <Filters />
+
+
+        {/* Could have used a singe hotel type/interface */}
+        {!apiCall.loading && apiCall.data.filter((element: any) => element.starRating >= filters.stars).map((element: any, index: number) => {
+          return <Hotel hotel={element} key={index} />
+        })}
+
+      </>
 
 
     </div>

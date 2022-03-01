@@ -10,7 +10,6 @@ export const Filters: React.FC = () => {
 
     const filters = useSelector((state: RootState) => state.filters)
     const dispatch = useDispatch();
-    console.log('rerender')
     return (
         <>
             <div>

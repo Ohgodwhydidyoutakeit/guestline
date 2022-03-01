@@ -20,18 +20,20 @@ export const Hotel: FC<any> = ({ hotel }: { hotel: any }) => {
         loading: true,
         data: [],
     })
+    //? this component wont rerender when filters.start changes since it does not access this property -- thats why we solve it with useEffect
+
     // ! At this point would start thinking about making my own hook
     useEffect(() => {
         const URL = `https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotel.id}`
-
         axios.get(URL).then((response) => {
-            // console.log(response.data)
             setApiCall({ loading: false, data: response.data.rooms })
         })
-    }, [])
+
+    }, [filters.stars])
 
     return (
-        <>
+
+        <div>
 
             <div className=" flex">
                 <Carouselle images={hotel.images} />
@@ -57,13 +59,14 @@ export const Hotel: FC<any> = ({ hotel }: { hotel: any }) => {
             </div>
             {
                 !apiCall.loading && apiCall.data.filter((element: any) => element.occupancy.maxAdults >= filters.adults && element.occupancy.maxChildren >= filters.children).map((element: any, index: number) => {
-                    console.log(element)
                     return (
                         <Room roomName={element.name} adults={element.occupancy.maxAdults} children={element.occupancy.maxChildren} longDescription={element.longDescription} key={index} />
                     )
                 })
 
             }
-        </>
+        </div>
+
+
     )
 }
