@@ -33,25 +33,21 @@ export const Hotel: FC<any> = ({ hotel }: { hotel: any }) => {
 
     return (
 
-        <div>
+        <div className="w-5/6 m-auto mt-12">
 
-            <div className=" flex">
+            <div className=" flex w-full p-3 border-x-2 border-y-2" >
                 <Carouselle images={hotel.images} />
-                <div>
-                    <h1>{hotel.name}</h1>
+                <div className="flex-auto px-8">
+                    <h1 className="text-2xl">{hotel.name}</h1>
                     <p>{hotel.address1}</p>
                     <p>{hotel.address2}</p>
                 </div>
-                <div>
+                <div className="flex flex-3 items-start  ">
                     {[...Array(5)].map((star, index) => {
                         index += 1;
                         return (
-                            <button
-                                type="button"
-                                key={index}
-                            >
-                                <Star props={index <= hotel.starRating ? false : true} />
-                            </button>
+                       
+                                <Star key={index} props={index <= hotel.starRating ? false : true} />
                         );
                     })}
                 </div>

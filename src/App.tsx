@@ -29,11 +29,14 @@ function App() {
 
 
 
-    <div className="App">
+    <div className="App relative ">
 
 
       <>
-        <img src="https://rl-uk2.azureedge.net/picturemanager/images/OBMNG4/hotel3.jpg" alt="main-logo" />
+        <div className='bg-cover image h-80'>
+          {/* <img className='bg-cover  object-none  ' src="" alt="main-logo" /> */}
+
+        </div>
         <Filters />
 
 

@@ -12,33 +12,35 @@ export const Filters: React.FC = () => {
     const dispatch = useDispatch();
     return (
         <>
-            <div>
-                {[...Array(5)].map((star, index) => {
-                    index += 1;
-                    return (
-                        <button
-                            type="button"
-                            key={index}
-                            onClick={() => {
-                                dispatch(changeStars(index))
-                            }}
-                        >
-                            <Star props={index <= filters.stars ? false : true} />
-                        </button>
-                    );
-                })}
-            </div>
-            <div className="flex">
-                <p>Adults</p>
-                <button onClick={() => { dispatch(incrementAdults()) }}>+</button>
-                <p>{filters.adults}</p>
-                <button onClick={() => { dispatch(decrementAdults()) }}>-</button>
-            </div>
-            <div className="flex">
-                <p>Children</p>
-                <button onClick={() => { dispatch(incrementChildren()) }}>+</button>
-                <p>{filters.children}</p>
-                <button onClick={() => { dispatch(decrementChildren()) }}>-</button>
+            <div className="absolute flex left-1/2  transform -translate-x-1/2 -translate-y-1/2 p-3 border bg-white justify-evenly   w-96 ">
+                <div>
+                    {[...Array(5)].map((star, index) => {
+                        index += 1;
+                        return (
+                            <button
+                                type="button"
+                                key={index}
+                                onClick={() => {
+                                    dispatch(changeStars(index))
+                                }}
+                            >
+                                <Star props={index <= filters.stars ? false : true} />
+                            </button>
+                        );
+                    })}
+                </div>
+                <div className="flex">
+                    <p>Adults</p>
+                    <button onClick={() => { dispatch(incrementAdults()) }}>+</button>
+                    <p>{filters.adults}</p>
+                    <button onClick={() => { dispatch(decrementAdults()) }}>-</button>
+                </div>
+                <div className="flex">
+                    <p>Children</p>
+                    <button onClick={() => { dispatch(incrementChildren()) }}>+</button>
+                    <p>{filters.children}</p>
+                    <button onClick={() => { dispatch(decrementChildren()) }}>-</button>
+                </div>
             </div>
         </>
     )

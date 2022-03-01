@@ -11,7 +11,7 @@ export const Carouselle: FC<TCarouselProps> = ({ images }: TCarouselProps) => {
 
     return (
         <>
-            <div className="w-40 h-40">
+            <div className="w-40 h-40 ">
 
 
                 <Carousel showThumbs={false} showIndicators={false} showStatus={false} >
